@@ -1,5 +1,7 @@
 {
   "name": "Footballnews",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

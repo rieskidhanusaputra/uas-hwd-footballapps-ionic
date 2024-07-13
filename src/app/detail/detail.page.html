@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Team Details</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngIf="team">
+    <img [src]="team.badge" height="180px" alt="Team Badge" />
+
+    <ion-card-header>
+      <ion-card-title>{{ team.name }}</ion-card-title>
+      <ion-card-subtitle>{{ team.city }}</ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-card-content>
+      <p>{{ team.description }}</p>
+      <p>Formed Year: {{ team.formedYear }}</p>
+      <p>Stadium: {{ team.stadium }}</p>
+    </ion-card-content>
+
+    <ion-item>
+      <ion-button (click)="save()" expand="block">Save to Favorites</ion-button>
+    </ion-item>
+  </ion-card>
+</ion-content>

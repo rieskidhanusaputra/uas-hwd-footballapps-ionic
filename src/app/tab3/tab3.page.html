@@ -1,17 +1,25 @@
-<ion-header [translucent]="true">
+<!-- tab3.page.html -->
+<ion-header>
   <ion-toolbar>
-    <ion-title>
-      FootballNews Apps
-    </ion-title>
+    <ion-buttons slot="start">
+    </ion-buttons>
+    <ion-title>Favorite</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 3</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+  <ion-card *ngIf="fav">
+    <img [src]="fav.badge" height="180px" alt="Team Badge" />
 
-  <app-explore-container name="Tab 3 page"></app-explore-container>
+    <ion-card-header>
+      <ion-card-title>{{ fav.name }}</ion-card-title>
+      <ion-card-subtitle>{{ fav.city }}</ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-card-content>
+      <p>{{ fav.description }}</p>
+      <p>Formed Year: {{ fav.formedYear }}</p>
+      <p>Stadium: {{ fav.stadium }}</p>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
